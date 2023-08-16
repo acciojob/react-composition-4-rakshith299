@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 const Form = ({onSubmit}) => {
 
     const [user, setUser] = useState({
-                                    namee: "",
+                                    name: "",
                                     email: "",
                                     password: ""
                                 })
@@ -18,7 +18,7 @@ const Form = ({onSubmit}) => {
         <form onSubmit = {(e) => afterSubmit(e)}>
             <div>
                 <label htmlFor="name">Name</label>
-                <input type = "text" value = {user.namee} placeholder="Name" onChange={(event) => setUser({...user,namee:event.target.value})} id = "name"/>
+                <input type = "text" value = {user.name} placeholder="Name" onChange={(event) => setUser({...user,name:event.target.value})} id = "name"/>
             </div>
 
             <div>
