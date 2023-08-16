@@ -9,12 +9,13 @@ const Form = ({onSubmit}) => {
                                     password: ""
                                 })
 
-    function afterSubmit(){
+    function afterSubmit(event){
+        event.preventDefault();
         onSubmit(user)
     }
 
     return(
-        <div>
+        <form onSubmit = {(e) => afterSubmit(e)}>
             <div>
                 <label htmlFor="name">Name</label>
                 <input type = "text" value = {user.namee} placeholder="Name" onChange={(event) => setUser({...user,namee:event.target.value})} id = "name"/>
@@ -31,12 +32,12 @@ const Form = ({onSubmit}) => {
             </div>
 
             <div>
-                <button onClick={afterSubmit}>
+                <button>
                     Submit
                 </button>
             </div>
 
-        </div>
+        </form>
     )
 }
 
